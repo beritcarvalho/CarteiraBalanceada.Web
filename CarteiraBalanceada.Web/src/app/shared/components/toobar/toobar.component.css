@@ -2,6 +2,10 @@
   flex: 1 1 auto;
 }
 
+button {
+  margin-right: 10px;
+}
+
 .selected {
   background-color: var(--primary);
   color: white;
