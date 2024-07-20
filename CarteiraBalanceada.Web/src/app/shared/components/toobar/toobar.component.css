@@ -1,0 +1,17 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    width: 200px;
+
+    mat-icon {
+        margin-right: 8px; 
+        font-size: 20px;
+    }
+    mat-select {
+        flex-grow: 1; 
+    }
+}
