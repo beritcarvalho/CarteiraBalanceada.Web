@@ -1,0 +1,28 @@
+<mat-toolbar>
+    
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <button id="btnCarteira" mat-button [ngClass]="{'selected': botaoSelecionado === 1}" (click)="ativarBotao(1)">
+        <mat-icon svgIcon="wallet" class="icon"></mat-icon>
+        Resumo Carteira
+    </button>
+
+    <button mat-button [ngClass]="{'selected': botaoSelecionado === 2}" (click)="ativarBotao(2)">
+        <mat-icon>add_shopping_cart</mat-icon>
+        Cálculo Aporte
+    </button>
+    <span class="example-spacer"></span>
+
+
+
+    <div class="container">
+        <mat-icon>account_balance_wallet</mat-icon>
+        <mat-select>
+            <mat-option value="option1">Option 1</mat-option>
+            <mat-option value="option2">Option 2</mat-option>
+            <mat-option value="option3">Option 3</mat-option>
+        </mat-select>
+    </div>
+</mat-toolbar>

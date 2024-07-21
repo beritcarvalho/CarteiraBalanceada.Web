@@ -1,0 +1,35 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+button {
+  margin-right: 10px;
+}
+
+.selected {
+  background-color: var(--primary);
+  color: white;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  width: 200px;
+
+  mat-icon {
+    margin-right: 8px;
+    font-size: 20px;
+  }
+
+  mat-select {
+    flex-grow: 1;
+  }
+}
+
+
+#btnCarteira mat-icon.icon {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;  
+}
+

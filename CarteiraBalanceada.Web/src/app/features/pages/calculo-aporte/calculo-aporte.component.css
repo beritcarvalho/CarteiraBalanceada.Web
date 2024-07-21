@@ -1,0 +1,11 @@
+.secao-aportes {  
+  margin: 10px auto 10px;  
+  max-width: 90%;
+}
+
+.conteiner-aportes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
