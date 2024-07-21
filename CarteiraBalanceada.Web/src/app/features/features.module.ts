@@ -4,6 +4,7 @@ import { ResumoCarteiraComponent } from './pages/resumo-carteira/resumo-carteira
 import { AtivoComponent } from './pages/resumo-carteira/components/ativo/ativo.component';
 import { SharedModule } from '../shared/shared.module';
 import { CalculoAporteComponent } from './pages/calculo-aporte/calculo-aporte.component';
+import { SugestaoAporteComponent } from './pages/calculo-aporte/components/sugestao-aporte/sugestao-aporte.component';
 
 
 
@@ -13,6 +14,7 @@ import { CalculoAporteComponent } from './pages/calculo-aporte/calculo-aporte.co
     ResumoCarteiraComponent,
     AtivoComponent,
     CalculoAporteComponent,
+    SugestaoAporteComponent,
   ],
   imports: [
     CommonModule,
