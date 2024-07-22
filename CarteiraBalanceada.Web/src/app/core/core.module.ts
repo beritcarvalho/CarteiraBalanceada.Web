@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DadosService } from './services/dados.service';
 
 
 
@@ -7,6 +8,9 @@ import { CommonModule } from '@angular/common';
   declarations: [],
   imports: [
     CommonModule
+  ],
+  providers: [
+    DadosService
   ]
 })
 export class CoreModule { }
