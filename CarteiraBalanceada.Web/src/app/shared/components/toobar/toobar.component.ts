@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { Carteira } from '../../interfaces/Carteira';
 
 @Component({
   selector: 'app-toobar',
@@ -10,6 +11,8 @@ import { Router } from '@angular/router';
 })
 export class ToobarComponent {
   botaoSelecionado = 0;
+  carteiras: Carteira[] = [];
+
 
   constructor(private iconRegistry: MatIconRegistry,
     private sanitizer: DomSanitizer,
