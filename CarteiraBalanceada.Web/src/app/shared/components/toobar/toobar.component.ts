@@ -4,6 +4,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { Carteira } from '../../interfaces/Carteira';
 import { DadosService } from '../../../core/services/dados.service';
+import { catchError, empty, finalize } from 'rxjs';
 
 @Component({
   selector: 'app-toobar',
@@ -11,8 +12,9 @@ import { DadosService } from '../../../core/services/dados.service';
   styleUrl: './toobar.component.scss'
 })
 export class ToobarComponent implements OnInit {
-  botaoSelecionado = 0;
-  carteiras: Carteira[] = [];
+  public loading: boolean = false;
+  public botaoSelecionado: number = 0;
+  public carteiras: Carteira[] = [];
 
   constructor(private iconRegistry: MatIconRegistry,
     private sanitizer: DomSanitizer,
@@ -36,14 +38,17 @@ export class ToobarComponent implements OnInit {
   }
 
   public obterCarteiras() {
-    this.dadosService.listarCarteiras().subscribe((resultado) => {
+    this.loading = true;
+    this.dadosService.listarCarteiras().pipe(
+      catchError(error => {
+        console.error('Erro:', error);
+        return empty(); 
+      }),
+      finalize(() => {
+        this.loading = false;
+      })
+    ).subscribe(resultado => {
       this.carteiras = resultado;
-    }, erro => {
-      console.log(erro);
-    },
-      () => {
-        console.log('fim')
-      }
-    );
+    });    
   }
 }

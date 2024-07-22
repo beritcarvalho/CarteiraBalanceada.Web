@@ -19,7 +19,7 @@
     <mat-icon>account_balance_wallet</mat-icon>
     <mat-select>
       <mat-option *ngFor="let carteira of carteiras" [value]="carteira.id">{{ carteira.nome }}</mat-option>
-      <mat-option value="1">Opcao</mat-option>
     </mat-select>
   </div>
 </mat-toolbar>
+<progress-bar *ngIf="loading"></progress-bar>

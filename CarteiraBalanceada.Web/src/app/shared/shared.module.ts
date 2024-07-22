@@ -8,14 +8,17 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSelectModule } from '@angular/material/select';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ToobarComponent } from './components/toobar/toobar.component';
+import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
 
 
 @NgModule({
   declarations: [
-    ToobarComponent
+    ToobarComponent,
+    ProgressBarComponent
   ],
   imports: [
     CommonModule,
@@ -26,8 +29,9 @@ import { ToobarComponent } from './components/toobar/toobar.component';
     MatButtonModule,
     MatToolbarModule,
     HttpClientModule,
-    MatSelectModule
-  ],
+    MatSelectModule,  
+    MatProgressBarModule
+],
   exports: [
     MatExpansionModule,
     MatCardModule,
