@@ -6,17 +6,15 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSelectModule } from '@angular/material/select';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ToobarComponent } from './components/toobar/toobar.component';
 
 
-
 @NgModule({
-  declarations: [    
-  
+  declarations: [
     ToobarComponent
   ],
   imports: [

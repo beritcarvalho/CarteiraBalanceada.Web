@@ -17,8 +17,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     FeaturesModule,
     SharedModule
   ],
-  exports:[
-    
+  exports: [
+
   ],
   providers: [
     provideAnimationsAsync()

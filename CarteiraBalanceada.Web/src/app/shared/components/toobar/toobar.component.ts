@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
@@ -7,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-toobar',
   templateUrl: './toobar.component.html',
-  styleUrl: './toobar.component.css'
+  styleUrl: './toobar.component.scss'
 })
 export class ToobarComponent {
   botaoSelecionado = 0;

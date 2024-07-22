@@ -2,15 +2,12 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 
-
 @Component({
-  selector: 'app-ativo',
-  templateUrl: './ativo.component.html',
-  styleUrl: './ativo.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'app-investimento',
+  templateUrl: './investimento.component.html',
+  styleUrl: './investimento.component.scss'
 })
-export class AtivoComponent {
-
+export class InvestimentoComponent {
   constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
     iconRegistry.addSvgIcon('calculate', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/calculate.svg'));
   }
