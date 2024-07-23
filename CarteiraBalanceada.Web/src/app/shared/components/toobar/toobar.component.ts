@@ -30,6 +30,7 @@ export class ToobarComponent implements OnInit {
   ngOnInit(): void {
     this.ObservarStatusLoading();
     this.obterCarteiras();
+    this.utilitariosService.showErrorNotification("erro");
   }
 
   private ObservarStatusLoading(): void {
@@ -51,7 +52,7 @@ export class ToobarComponent implements OnInit {
       this.carteiras = resultado;
     });    
   }
-  
+
   public ativarBotao(botao: number): void {
     this.botaoSelecionado = botao;
     if (this.botaoSelecionado == 1) {
