@@ -18,14 +18,16 @@ export class UtilitariosService {
   public mostrarNotificacaoInformacao(mensagem: string): void {
     this._snackBar.open(mensagem, 'Dispensar', {
       duration: 10000,
-      panelClass: ['mensagem-informacao']
+      panelClass: ['mensagem-informacao'],
+      horizontalPosition: 'right'
     });
   }
 
   public mostrarNotificacaoSucesso(mensagem: string): void {
     this._snackBar.open(mensagem, 'Dispensar', {
       duration: 10000,
-      panelClass: ['mensagem-sucesso']
+      panelClass: ['mensagem-sucesso'],
+      horizontalPosition: 'right'
     });
   }
 
@@ -33,7 +35,8 @@ export class UtilitariosService {
     const errorMessage = error?.error?.errors || "Ocorreu um erro inesperado!";
     this._snackBar.open(error, 'Dispensar', {
       duration: 10000,
-      panelClass: ['mensagem-erro']
+      panelClass: ['mensagem-erro'],
+      horizontalPosition: 'right'
     });
   }
 }
