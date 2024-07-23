@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Mensagem } from '../interfaces/mensagem';
-import { MensagemComponent } from '../components/mensagem/mensagem.component';
 
 @Injectable({
   providedIn: 'root'
@@ -17,44 +15,25 @@ export class UtilitariosService {
     this.loadingSubject.next(loading);
   }
 
-  mensagem: Mensagem = {
-    message: '',
-    error: false
+  public mostrarNotificacaoInformacao(mensagem: string): void {
+    this._snackBar.open(mensagem, 'Dispensar', {
+      duration: 10000,
+      panelClass: ['mensagem-informacao']
+    });
   }
 
-  durationInSeconds = 5;
-
-  openSnackBar() {
-    if (this.mensagem) {
-      if (this.mensagem.error)
-        this.durationInSeconds = 10;
-
-      this._snackBar.openFromComponent(MensagemComponent, {
-        duration: this.durationInSeconds * 1000,
-      });
-    }
+  public mostrarNotificacaoSucesso(mensagem: string): void {
+    this._snackBar.open(mensagem, 'Dispensar', {
+      duration: 10000,
+      panelClass: ['mensagem-sucesso']
+    });
   }
 
-  setMensagem(message: string, error: boolean) {    
-    this.mensagem.message = message;
-    this.mensagem.error = error;
-    this.openSnackBar()
-  }
-
-  showSuccessNotification(message: string) {    
-    this.mensagem.message = message;
-    this.mensagem.error = false;
-    this.openSnackBar()
-  }
-
-  showErrorNotification(error: any): void {
+  public mostrarNotificacaoErro(error: any): void {
     const errorMessage = error?.error?.errors || "Ocorreu um erro inesperado!";
-    this.mensagem.message = errorMessage;
-    this.mensagem.error = true;
-    this.openSnackBar();
-  }  
-
-  getMensagem(): Mensagem {
-    return this.mensagem
+    this._snackBar.open(error, 'Dispensar', {
+      duration: 10000,
+      panelClass: ['mensagem-erro']
+    });
   }
 }

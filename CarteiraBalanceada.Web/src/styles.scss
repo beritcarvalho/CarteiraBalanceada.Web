@@ -1,14 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
 
 :root {
-  --mat-sidenav-content-background-color: #262124;  
+  --mat-sidenav-content-background-color: #262124;
   --mat-sidenav-content-text-color: #e9e0e4;
-  --primary: #810081;  
+  --primary: #810081;
 }
 
-html, body {
-    height: 100%;
-    background-color:var(--mat-sidenav-content-background-color);
-    color:var(--mat-sidenav-content-text-color);
+html,
+body {
+  height: 100%;
+  background-color: var(--mat-sidenav-content-background-color);
+  color: var(--mat-sidenav-content-text-color);
 }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mensagem-sucesso {
+  --mdc-snackbar-container-color: #2EA043;
+  --mdc-snackbar-supporting-text-color: #e9e0e4;
+  --mdc-snackbar-container-shape: 8px;
+
+  --mat-snack-bar-button-color: #e9e0e4;
+  --mdc-text-button-label-text-color: grey;
+}
+
+.mensagem-erro {
+  --mdc-snackbar-container-color: darkred;
+  --mdc-snackbar-supporting-text-color: #e9e0e4;
+  --mdc-snackbar-container-shape: 8px;
+
+  --mat-snack-bar-button-color: #e9e0e4;
+  --mdc-text-button-label-text-color: grey;
+}
+
+.mensagem-informacao {
+  --mdc-snackbar-container-color: #e9e0e4;
+  --mdc-snackbar-supporting-text-color: #262124;
+  --mdc-snackbar-container-shape: 8px;
+
+  --mat-snack-bar-button-color: #262124;
+  --mdc-text-button-label-text-color: grey;
+}

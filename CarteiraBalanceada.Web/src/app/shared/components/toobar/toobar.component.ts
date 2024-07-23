@@ -14,8 +14,6 @@ import { UtilitariosService } from '../../services/utilitarios.service';
 })
 export class ToobarComponent implements OnInit {
   public loading: boolean = false;
-  
-  
   public botaoSelecionado: number = 0;
   public carteiras: Carteira[] = [];
 
@@ -28,12 +26,11 @@ export class ToobarComponent implements OnInit {
     iconRegistry.addSvgIcon('wallet', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/wallet.svg'));
   }
   ngOnInit(): void {
-    this.ObservarStatusLoading();
+    this.observarStatusLoading();
     this.obterCarteiras();
-    this.utilitariosService.showErrorNotification("erro");
   }
 
-  private ObservarStatusLoading(): void {
+  private observarStatusLoading(): void {
     this.utilitariosService.loadingObservavel.subscribe((loading) => this.loading = loading
     );
   }
@@ -43,14 +40,14 @@ export class ToobarComponent implements OnInit {
     this.dadosService.listarCarteiras().pipe(
       catchError(error => {
         console.error('Erro:', error);
-        return empty(); 
+        return empty();
       }),
       finalize(() => {
         this.utilitariosService.setLoading(false);
       })
     ).subscribe(resultado => {
       this.carteiras = resultado;
-    });    
+    });
   }
 
   public ativarBotao(botao: number): void {
@@ -62,6 +59,4 @@ export class ToobarComponent implements OnInit {
       this.router.navigateByUrl('/calculo-aporte');
     }
   }
-
- 
 }
