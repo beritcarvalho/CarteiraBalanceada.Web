@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Carteira } from '../../shared/interfaces/Carteira'
+import { Carteira } from '../../shared/interfaces/carteira'
 import { environment } from '../../../environments/environment';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';

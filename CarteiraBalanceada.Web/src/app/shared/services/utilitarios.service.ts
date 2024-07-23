@@ -32,7 +32,7 @@ export class UtilitariosService {
   }
 
   public mostrarNotificacaoErro(error: any): void {
-    const errorMessage = error?.error?.errors || "Ocorreu um erro inesperado!";
+    const errorMessage = error?.message || "Ocorreu um erro inesperado!";
     this._snackBar.open(error, 'Dispensar', {
       duration: 10000,
       panelClass: ['mensagem-erro'],

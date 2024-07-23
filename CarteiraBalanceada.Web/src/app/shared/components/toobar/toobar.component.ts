@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { Carteira } from '../../interfaces/Carteira';
+import { Carteira } from '../../interfaces/carteira';
 import { DadosService } from '../../../core/services/dados.service';
 import { catchError, empty, finalize } from 'rxjs';
 import { UtilitariosService } from '../../services/utilitarios.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-toobar',
@@ -39,7 +40,7 @@ export class ToobarComponent implements OnInit {
     this.utilitariosService.setLoading(true);
     this.dadosService.listarCarteiras().pipe(
       catchError(error => {
-        console.error('Erro:', error);
+        this.utilitariosService.mostrarNotificacaoErro(error?.message)
         return empty();
       }),
       finalize(() => {
