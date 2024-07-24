@@ -11,13 +11,13 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 import { HttpClientModule } from '@angular/common/http';
-import { ToobarComponent } from './components/toobar/toobar.component';
+import { toolbarComponent } from './components/toolbar/toolbar.component';
 import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
 
 
 @NgModule({
   declarations: [
-    ToobarComponent,
+    toolbarComponent,
     ProgressBarComponent
   ],
   imports: [
@@ -39,7 +39,7 @@ import { ProgressBarComponent } from './components/progress-bar/progress-bar.com
     MatDividerModule,
     MatButtonModule,
     MatToolbarModule,
-    ToobarComponent
+    toolbarComponent
   ]
 })
 export class SharedModule { }

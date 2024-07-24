@@ -1,6 +1,6 @@
 <mat-toolbar>
 
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+  <button mat-icon-button >
     <mat-icon>menu</mat-icon>
   </button>
 
@@ -18,7 +18,8 @@
   <div class="container">
     <mat-icon>account_balance_wallet</mat-icon>
     <mat-select>
-      <mat-option *ngFor="let carteira of carteiras" [value]="carteira.id">{{ carteira.nome }}</mat-option>
+      <!--<mat-option *ngFor="let carteira of carteiras" opcaoSelecionada="carteira.id">{{ carteira.nome }}</mat-option>-->
+      <mat-option value="berit" (onSelectionChange)="mostrar($event)">BERIT</mat-option>
     </mat-select>
   </div>
 </mat-toolbar>

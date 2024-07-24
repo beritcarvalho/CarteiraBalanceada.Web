@@ -2,7 +2,7 @@ export const environment = {
   production: false,
   title: 'Local Environment',
   carteiraBalanceadaApi: {
-    url: 'https://localhost:7189',
+    url: 'https://localhost:44353',
     route: {
       carteiras: '/carteiras'
     }

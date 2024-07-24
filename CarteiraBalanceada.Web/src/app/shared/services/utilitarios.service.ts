@@ -9,10 +9,17 @@ export class UtilitariosService {
   private loadingSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   public loadingObservavel: Observable<boolean> = this.loadingSubject.asObservable();
 
+  private idCarteiraSelecionadaSubject: BehaviorSubject<string> = new BehaviorSubject<string>('');
+  public idCarteiraSelecionadaObservavel: Observable<string> = this.idCarteiraSelecionadaSubject.asObservable();
+
   constructor(private _snackBar: MatSnackBar) { }
 
   public setLoading(loading: boolean): void {
     this.loadingSubject.next(loading);
+  }
+
+  public setIdCarteiraSelecionada(id: string): void {
+    this.idCarteiraSelecionadaSubject.next(id);
   }
 
   public mostrarNotificacaoInformacao(mensagem: string): void {

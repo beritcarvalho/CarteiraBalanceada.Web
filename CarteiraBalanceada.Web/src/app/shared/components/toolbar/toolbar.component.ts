@@ -7,16 +7,19 @@ import { DadosService } from '../../../core/services/dados.service';
 import { catchError, empty, finalize } from 'rxjs';
 import { UtilitariosService } from '../../services/utilitarios.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { MatOptionSelectionChange } from '@angular/material/core';
 
 @Component({
-  selector: 'app-toobar',
-  templateUrl: './toobar.component.html',
-  styleUrl: './toobar.component.scss'
+  selector: 'app-toolbar',
+  templateUrl: './toolbar.component.html',
+  styleUrl: './toolbar.component.scss'
 })
-export class ToobarComponent implements OnInit {
+export class toolbarComponent implements OnInit {
   public loading: boolean = false;
   public botaoSelecionado: number = 0;
   public carteiras: Carteira[] = [];
+
+  opcaoSelecionada: any;
 
   constructor(private iconRegistry: MatIconRegistry,
     private sanitizer: DomSanitizer,
@@ -59,5 +62,11 @@ export class ToobarComponent implements OnInit {
     else if (this.botaoSelecionado == 2) {
       this.router.navigateByUrl('/calculo-aporte');
     }
+  }
+
+  mostrar(evento: MatOptionSelectionChange){
+    console.log(evento?.source?.value)
+    this.utilitariosService.setIdCarteiraSelecionada(evento?.source?.value)
+    console.log(this.opcaoSelecionada)
   }
 }
