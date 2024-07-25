@@ -46,4 +46,8 @@ export class UtilitariosService {
       horizontalPosition: 'right'
     });
   }
+  
+  public observarAlteracao() {
+    return this.idCarteiraSelecionadaSubject;
+  }
 }
