@@ -8,6 +8,7 @@ import { catchError, empty, finalize } from 'rxjs';
 import { UtilitariosService } from '../../services/utilitarios.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { MatOptionSelectionChange } from '@angular/material/core';
+import { MatSelectChange } from '@angular/material/select';
 
 @Component({
   selector: 'app-toolbar',
@@ -64,9 +65,7 @@ export class toolbarComponent implements OnInit {
     }
   }
 
-  mostrar(evento: MatOptionSelectionChange){
-    console.log(evento?.source?.value)
-    this.utilitariosService.setIdCarteiraSelecionada(evento?.source?.value)
-    console.log(this.opcaoSelecionada)
+  setIdCarteira(evento: MatSelectChange){    
+    this.utilitariosService.notificarAlteracaoIdCarteira(evento?.value)    
   }
 }

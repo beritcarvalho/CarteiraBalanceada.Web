@@ -18,7 +18,7 @@ export class UtilitariosService {
     this.loadingSubject.next(loading);
   }
 
-  public setIdCarteiraSelecionada(id: string): void {
+  public notificarAlteracaoIdCarteira(id: string): void {
     this.idCarteiraSelecionadaSubject.next(id);
   }
 

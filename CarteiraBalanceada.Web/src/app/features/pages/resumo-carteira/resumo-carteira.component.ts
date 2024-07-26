@@ -7,13 +7,13 @@ import { UtilitariosService } from '../../../shared/services/utilitarios.service
   styleUrl: './resumo-carteira.component.scss'
 })
 export class ResumoCarteiraComponent implements OnInit {
+  teste: any = null;
 
   constructor(private utilitarioService: UtilitariosService) {}
 
   ngOnInit(): void {
-    this.utilitarioService.observarAlteracao().subscribe(teste => {
-      console.log(teste);
-      this.utilitarioService.mostrarNotificacaoInformacao('alterado') 
+    this.utilitarioService.observarAlteracao().subscribe(teste => {         
+      this.utilitarioService.mostrarNotificacaoInformacao(teste) 
     });
   }
   
