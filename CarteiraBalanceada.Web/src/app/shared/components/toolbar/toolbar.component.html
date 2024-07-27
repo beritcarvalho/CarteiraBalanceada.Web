@@ -18,7 +18,7 @@
   <div class="container">
     <mat-icon>account_balance_wallet</mat-icon>
     <mat-select (selectionChange)="setIdCarteira($event)">
-      <mat-option *ngFor="let carteira of carteiras" [value]="carteira.id" >{{ carteira.nome }}</mat-option>      
+      <mat-option *ngFor="let carteira of carteiras" [value]="carteira.id">{{ carteira.nome }}</mat-option>      
     </mat-select>
   </div>
 </mat-toolbar>

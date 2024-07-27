@@ -27,8 +27,7 @@ export class CarteiraService {
       id: id,
       aporte: aporte
     }
-
-    console.log(parametro)
+        
     return this.service.http.post<Carteira>(`${this.urlApi}/calcular-aporte-distribuido`, parametro);
   }
 }

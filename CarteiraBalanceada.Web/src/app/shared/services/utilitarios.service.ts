@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { Carteira } from '../interfaces/carteira';
+import id from '@angular/common/locales/id';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +11,8 @@ export class UtilitariosService {
   private loadingSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   public loadingObservavel: Observable<boolean> = this.loadingSubject.asObservable();
 
-  private idCarteiraSelecionadaSubject: BehaviorSubject<string> = new BehaviorSubject<string>('');
-  public idCarteiraSelecionadaObservavel: Observable<string> = this.idCarteiraSelecionadaSubject.asObservable();
+  private idCarteiraSelecionadaSubject: BehaviorSubject<Carteira | null> = new BehaviorSubject<Carteira | null>(null);
+  public carteiraSelecionadaObservavel: Observable<Carteira | null> = this.idCarteiraSelecionadaSubject.asObservable();
 
   constructor(private _snackBar: MatSnackBar) { }
 
@@ -18,8 +20,8 @@ export class UtilitariosService {
     this.loadingSubject.next(loading);
   }
 
-  public notificarAlteracaoIdCarteira(id: string): void {
-    this.idCarteiraSelecionadaSubject.next(id);
+  public notificarAlteracaoIdCarteira(carteira: Carteira | null): void {
+    this.idCarteiraSelecionadaSubject.next(carteira);
   }
 
   public mostrarNotificacaoInformacao(mensagem: string): void {
@@ -47,7 +49,7 @@ export class UtilitariosService {
     });
   }
   
-  public observarAlteracao() {
+  public observarCarteiraSelecionada() {
     return this.idCarteiraSelecionadaSubject;
   }
 }

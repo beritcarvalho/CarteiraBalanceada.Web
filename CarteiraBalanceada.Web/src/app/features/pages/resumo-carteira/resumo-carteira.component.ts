@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UtilitariosService } from '../../../shared/services/utilitarios.service';
 import { Carteira } from '../../../shared/interfaces/carteira';
-import { CarteiraService } from '../../services/carteira.service';
 import { Investimento } from '../../../shared/interfaces/investimento';
+import { catchError, empty, finalize } from 'rxjs';
 
 @Component({
   selector: 'app-resumo-carteira',
@@ -11,19 +11,24 @@ import { Investimento } from '../../../shared/interfaces/investimento';
 })
 export class ResumoCarteiraComponent {
 
-  constructor(private utilitarioService: UtilitariosService,
-    private carteiraService: CarteiraService
+  constructor(private utilitariosService: UtilitariosService
   ) { }
 
-  public carteira!: Carteira;
+  public carteira: Carteira | null = null;
   public investimentos!: Investimento[];
+  public mostrar = false;
 
   ngOnInit(): void {
-    this.utilitarioService.observarAlteracao().subscribe(id => {
-      this.carteiraService.obterCarteiraPorId(id).subscribe((resultado) => {
-        this.carteira = resultado;
-        this.investimentos = resultado?.investimentos
-      })
+    this.observarCarteiraSelecionada();
+  }
+
+  private observarCarteiraSelecionada(): void{
+    this.utilitariosService.observarCarteiraSelecionada().subscribe(carteiraSelecionada => {
+      if(carteiraSelecionada) {
+        this.carteira = carteiraSelecionada
+      } else {
+        this.carteira = null
+      }
     });
   }
 }
