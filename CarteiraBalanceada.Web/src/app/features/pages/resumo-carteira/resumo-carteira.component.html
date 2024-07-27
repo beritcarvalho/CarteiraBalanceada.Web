@@ -1,8 +1,5 @@
 <mat-card appearance="outlined">
-  <mat-card-content class="investimentos">
-    <app-investimento></app-investimento>
-  </mat-card-content>
-  <mat-card-content>
-    <app-investimento></app-investimento>
+  <mat-card-content class="investimentos" *ngIf="investimentos !== undefined">
+    <app-investimento *ngFor="let investimento of investimentos" [investimento]="investimento"></app-investimento>
   </mat-card-content>
 </mat-card>

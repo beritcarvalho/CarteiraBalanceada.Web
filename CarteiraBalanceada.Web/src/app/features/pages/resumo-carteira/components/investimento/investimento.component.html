@@ -1,14 +1,14 @@
-<mat-card appearance="outlined">
+<mat-card appearance="outlined">  
   <mat-card-content>
     <mat-accordion>
       <mat-expansion-panel>
         <mat-expansion-panel-header>
-          <mat-panel-title> AÇÕES </mat-panel-title>
-          <mat-panel-description> R$ 1931,45</mat-panel-description>
+          <mat-panel-title> {{ investimento?.nome}} </mat-panel-title>
+          <mat-panel-description> R$ {{ investimento?.posicaoAtual }}</mat-panel-description>
         </mat-expansion-panel-header>
-        <p><b>Posição Atual:</b> R$ 1931,45</p>
-        <p><b>% Ideal:</b> 25,00%</p>
-        <p><b>% Atual:</b> 33,57%</p>
+        <p><b>Posição Atual:</b> R$ {{ investimento?.posicaoAtual }}</p>
+        <p><b>% Ideal:</b> {{ investimento?.percentualIdeal }}%</p>
+        <p><b>% Atual:</b> {{ investimento?.percentualAtual }}%</p>
 
         <section>
           <div class="botoes">

@@ -3,6 +3,8 @@ import { Investimento } from "./investimento";
 export interface Carteira {
   id: string;
   nome: string;
-  ativo: boolean,
+  valorCarteira: number;
+  valorComAporte: number;
+  aporte: number;
   investimentos: Investimento[]
 }
