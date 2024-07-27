@@ -1,13 +1,13 @@
 <mat-card appearance="outlined" class="detalhes-investimentos">
-  <mat-card-header>
-    <mat-card-title>AÇÕES</mat-card-title>
+  <mat-card-header class="titulo">
+    <mat-card-title>{{ investimento?.nome }}</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <p><b>Posição Atual:</b> R$ 1931.45</p>
-    <p><b>% Ideal:</b> 25,00%</p>
-    <p><b>% Atual:</b> 33.57%</p>
-    <p><b>Aporte Sugerido:</b> R$ 0,00</p>
-    <p><b>Posição pós aporte:</b> R$ 1931.45</p>
-    <p><b>% Após aporte:</b> 33.01%</p>
+    <p><b>Posição Atual:</b> R$ {{investimento?.posicaoAtual }}</p>
+    <p><b>% Ideal:</b> {{ investimento?.percentualIdeal }}%</p>
+    <p><b>% Atual:</b> {{ investimento?.percentualAtual }}</p>
+    <p><b>Aporte Sugerido:</b> R$ {{ investimento?.sugestaoAporte }}</p>
+    <p><b>Posição pós aporte:</b> R$ {{ investimento?.posicaoComSugestaoAporte }}</p>
+    <p><b>% Após aporte:</b> {{ investimento?.percentualComSugestaoAporte }}%</p>
   </mat-card-content>
 </mat-card>

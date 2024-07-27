@@ -1,6 +1,9 @@
 .detalhes-investimentos {
-  margin: 10px;
+  margin: 5px;
   width: 300px;
   height: 300px;
-  padding: 5px;
+
+  .titulo {
+    margin-bottom: 30px;
+  }
 }

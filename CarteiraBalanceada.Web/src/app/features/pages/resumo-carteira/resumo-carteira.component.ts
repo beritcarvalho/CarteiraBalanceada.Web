@@ -9,21 +9,21 @@ import { Investimento } from '../../../shared/interfaces/investimento';
   templateUrl: './resumo-carteira.component.html',
   styleUrl: './resumo-carteira.component.scss'
 })
-export class ResumoCarteiraComponent { 
+export class ResumoCarteiraComponent {
 
   constructor(private utilitarioService: UtilitariosService,
     private carteiraService: CarteiraService
-  ) {}
+  ) { }
 
   public carteira!: Carteira;
-  public investimentos!: Investimento[]; 
+  public investimentos!: Investimento[];
 
   ngOnInit(): void {
-    this.utilitarioService.observarAlteracao().subscribe(id => {        
+    this.utilitarioService.observarAlteracao().subscribe(id => {
       this.carteiraService.obterCarteiraPorId(id).subscribe((resultado) => {
         this.carteira = resultado;
         this.investimentos = resultado?.investimentos
       })
-    });    
-  }  
+    });
+  }
 }

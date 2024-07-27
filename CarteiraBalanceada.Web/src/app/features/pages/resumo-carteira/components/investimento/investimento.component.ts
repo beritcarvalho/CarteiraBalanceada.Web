@@ -10,9 +10,7 @@ import { Investimento } from '../../../../../shared/interfaces/investimento';
 })
 export class InvestimentoComponent {
 
-  @Input() investimento!: Investimento;;
-
-  
+  @Input() investimento!: Investimento;  
 
   constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
     iconRegistry.addSvgIcon('calculate', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/calculate.svg'));

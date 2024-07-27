@@ -4,7 +4,12 @@ import { environment } from '../../../environments/environment';
 import { HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Carteira } from '../../shared/interfaces/carteira';
+import { Aporte } from '../../shared/interfaces/aporte-input';
 
+export interface Teste {
+  nomeCarteira: string;
+  aporte: number 
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -15,5 +20,15 @@ export class CarteiraService {
 
   public obterCarteiraPorId(id: string): Observable<Carteira> {    
     return this.service.http.get<Carteira>(`${this.urlApi}/${id}`);
+  }
+
+  public distribuirAporte(id: string, aporte: number): Observable<Carteira> {
+    const parametro: Aporte = {
+      id: id,
+      aporte: aporte
+    }
+
+    console.log(parametro)
+    return this.service.http.post<Carteira>(`${this.urlApi}/calcular-aporte-distribuido`, parametro);
   }
 }

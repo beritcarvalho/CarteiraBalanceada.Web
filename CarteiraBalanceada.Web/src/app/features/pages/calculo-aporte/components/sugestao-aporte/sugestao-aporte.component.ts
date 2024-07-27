@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Investimento } from '../../../../../shared/interfaces/investimento';
 
 @Component({
   selector: 'app-sugestao-aporte',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './sugestao-aporte.component.scss'
 })
 export class SugestaoAporteComponent {
-
+  @Input() investimento!: Investimento;
+  
 }
