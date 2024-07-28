@@ -10,3 +10,27 @@
     }
   }
 }
+
+.input-aporte {
+  display: flex;
+  align-items: flex-start; // Alinha os itens no topo do contêiner
+  gap: 8px; // Espaçamento entre o input e o botão
+  padding: 8px; // Adiciona algum padding ao redor do contêiner (opcional)
+  height: 100%; // Faz o contêiner ocupar toda a altura disponível (ajustável conforme necessário)
+  
+  form {
+    display: flex; // Usa flexbox para alinhar seu conteúdo
+    align-items: flex-start; // Alinha o conteúdo do formulário no topo
+    flex: 1; // Faz o formulário ocupar o espaço disponível
+  }
+
+  mat-form-field {
+    flex: 1; // Faz o campo de entrada ocupar o máximo de espaço disponível
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+  }
+}

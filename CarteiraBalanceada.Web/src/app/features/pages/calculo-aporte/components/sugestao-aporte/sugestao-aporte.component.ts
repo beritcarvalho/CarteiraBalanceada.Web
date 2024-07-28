@@ -7,6 +7,5 @@ import { Investimento } from '../../../../../shared/interfaces/investimento';
   styleUrl: './sugestao-aporte.component.scss'
 })
 export class SugestaoAporteComponent {
-  @Input() investimento!: Investimento;
-  
+  @Input() investimento!: Investimento;  
 }

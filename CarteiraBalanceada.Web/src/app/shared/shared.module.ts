@@ -9,10 +9,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSelectModule } from '@angular/material/select';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 import { toolbarComponent } from './components/toolbar/toolbar.component';
 import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
+
 
 
 @NgModule({
@@ -29,9 +33,12 @@ import { ProgressBarComponent } from './components/progress-bar/progress-bar.com
     MatButtonModule,
     MatToolbarModule,
     HttpClientModule,
-    MatSelectModule,  
-    MatProgressBarModule
-],
+    MatSelectModule,
+    MatProgressBarModule,
+    MatInputModule,
+    MatFormFieldModule,
+    FormsModule
+  ],
   exports: [
     MatExpansionModule,
     MatCardModule,
@@ -39,7 +46,11 @@ import { ProgressBarComponent } from './components/progress-bar/progress-bar.com
     MatDividerModule,
     MatButtonModule,
     MatToolbarModule,
-    toolbarComponent
+    toolbarComponent,
+    MatInputModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule 
   ]
 })
 export class SharedModule { }

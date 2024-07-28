@@ -69,25 +69,6 @@ export class toolbarComponent implements OnInit {
 
   setIdCarteira(evento: MatSelectChange) {
     let id = evento?.source?.value;
-    if (id) {
-      this.utilitariosService.setLoading(true);
-      this.carteiraService.distribuirAporte(id, 0).pipe(
-        catchError(error => {
-          this.carteiraSelecionada = null;
-          this.utilitariosService.mostrarNotificacaoErro(error?.message)
-          return empty();
-        }),
-        finalize(() => {
-          this.utilitariosService.setLoading(false);
-          this.utilitariosService.notificarAlteracaoIdCarteira(this.carteiraSelecionada)
-        })
-      ).subscribe(resultado => {
-        if (resultado) {
-          this.carteiraSelecionada = resultado;
-        } else {
-          this.carteiraSelecionada = null;
-        }
-      });
-    } else this.carteiraSelecionada = null;
+    this.carteiraService.distribuirAporte(id,0);
   }
 }
