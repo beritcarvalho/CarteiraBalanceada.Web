@@ -1,0 +1,25 @@
+<mat-toolbar>
+
+  <button mat-icon-button >
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <button id="btnCarteira" mat-button [ngClass]="{'selected': botaoSelecionado === 1}" (click)="ativarBotao(1)">
+    <mat-icon svgIcon="wallet" class="icon"></mat-icon>
+    Resumo Carteira
+  </button>
+
+  <button mat-button [ngClass]="{'selected': botaoSelecionado === 2}" (click)="ativarBotao(2)">
+    <mat-icon>add_shopping_cart</mat-icon>
+    Cálculo Aporte
+  </button>
+  <span class="example-spacer"></span>
+
+  <div class="container">
+    <mat-icon>account_balance_wallet</mat-icon>
+    <mat-select (selectionChange)="setIdCarteira($event)">
+      <mat-option *ngFor="let carteira of carteiras" [value]="carteira.id">{{ carteira.nome }}</mat-option>      
+    </mat-select>
+  </div>
+</mat-toolbar>
+<progress-bar *ngIf="loading"></progress-bar>

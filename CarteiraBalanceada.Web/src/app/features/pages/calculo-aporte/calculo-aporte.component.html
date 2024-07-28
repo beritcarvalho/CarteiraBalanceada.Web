@@ -1,14 +1,36 @@
-  <section class="secao-aportes">
-    <div class="conteiner-aportes">
-      <app-sugestao-aporte></app-sugestao-aporte>
-      <app-sugestao-aporte></app-sugestao-aporte>
-      <app-sugestao-aporte></app-sugestao-aporte>
-      <app-sugestao-aporte></app-sugestao-aporte>
-      <app-sugestao-aporte></app-sugestao-aporte>
-      <app-sugestao-aporte></app-sugestao-aporte>
-      <app-sugestao-aporte></app-sugestao-aporte>
-      <app-sugestao-aporte></app-sugestao-aporte>
-      <app-sugestao-aporte></app-sugestao-aporte>
-      <app-sugestao-aporte></app-sugestao-aporte>
-    </div>
-  </section>
+<mat-card class="card-carteira" *ngIf="carteira">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{ carteira?.nome }}</mat-card-title>
+    <mat-card-subtitle>{{ carteira?.valorCarteira }}</mat-card-subtitle>
+  </mat-card-header>
+
+
+
+  <mat-card-content *ngIf="carregarInvestimentos">
+    <mat-card-actions>
+      <span class="input-aporte">
+        <form [formGroup]="formulario">
+          <mat-form-field>
+            <mat-label>Valor do Aporte</mat-label>
+            <input matInput formControlName="aporte" #valor>
+            <mat-error *ngIf="formulario.get('aporte')?.hasError('required')">
+              Obrigatório valor válido para simulação.
+            </mat-error>
+            <mat-error *ngIf="formulario.get('aporte')?.hasError('pattern')">
+              Valor inválido.
+            </mat-error>
+          </mat-form-field>
+        </form>
+        <button mat-button (click)="distribuirAporte()"><mat-icon svgIcon="calculate"></mat-icon>Simular Distribuição</button>
+      </span>
+    </mat-card-actions>
+    <section class="secao-aportes">
+      <div class="conteiner-aportes">
+        <app-sugestao-aporte *ngFor="let investimento of carteira?.investimentos"
+          [investimento]="investimento"></app-sugestao-aporte>
+      </div>
+    </section>
+  </mat-card-content>
+
+</mat-card>

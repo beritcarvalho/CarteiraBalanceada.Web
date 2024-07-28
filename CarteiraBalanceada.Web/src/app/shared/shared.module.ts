@@ -6,18 +6,23 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSelectModule } from '@angular/material/select';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
-import { ToobarComponent } from './components/toobar/toobar.component';
+import { toolbarComponent } from './components/toolbar/toolbar.component';
+import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
 
 
 
 @NgModule({
-  declarations: [    
-  
-    ToobarComponent
+  declarations: [
+    toolbarComponent,
+    ProgressBarComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +33,11 @@ import { ToobarComponent } from './components/toobar/toobar.component';
     MatButtonModule,
     MatToolbarModule,
     HttpClientModule,
-    MatSelectModule
+    MatSelectModule,
+    MatProgressBarModule,
+    MatInputModule,
+    MatFormFieldModule,
+    FormsModule
   ],
   exports: [
     MatExpansionModule,
@@ -37,7 +46,11 @@ import { ToobarComponent } from './components/toobar/toobar.component';
     MatDividerModule,
     MatButtonModule,
     MatToolbarModule,
-    ToobarComponent
+    toolbarComponent,
+    MatInputModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule 
   ]
 })
 export class SharedModule { }
