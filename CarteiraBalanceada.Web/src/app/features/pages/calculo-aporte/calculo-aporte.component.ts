@@ -47,14 +47,11 @@ export class CalculoAporteComponent implements OnInit {
 
   public distribuirAporte() {
     if (this.formulario.valid) {
-
       
       let input = this.formulario.get('aporte')?.value;
       input = input.replace(',', '.');
 
       const aporte = Number(input);
-
-
 
       if(this.carteira?.id)
         this.carteiraService.distribuirAporte(this.carteira.id, aporte)

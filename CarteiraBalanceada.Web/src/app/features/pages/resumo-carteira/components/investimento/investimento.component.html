@@ -4,11 +4,11 @@
       <mat-expansion-panel>
         <mat-expansion-panel-header>
           <mat-panel-title> {{ investimento?.nome}} </mat-panel-title>
-          <mat-panel-description> R$ {{ investimento?.posicaoAtual }}</mat-panel-description>
+          <mat-panel-description> {{ investimento?.posicaoAtual | currency:'BRL': 'symbol'}}</mat-panel-description>
         </mat-expansion-panel-header>
-        <p><b>Posição Atual:</b> R$ {{ investimento?.posicaoAtual }}</p>
-        <p><b>% Ideal:</b> {{ investimento?.percentualIdeal }}%</p>
-        <p><b>% Atual:</b> {{ investimento?.percentualAtual }}%</p>
+        <p><b>Posição Atual:</b> {{ investimento?.posicaoAtual | currency:'BRL': 'symbol'}}</p>
+        <p><b>% Ideal:</b> {{ investimento?.percentualIdeal | number: '1.2-2' }}%</p>
+        <p><b>% Atual:</b> {{ investimento?.percentualAtual | number: '1.2-2' }}%</p>
 
         <section>
           <div class="botoes">
