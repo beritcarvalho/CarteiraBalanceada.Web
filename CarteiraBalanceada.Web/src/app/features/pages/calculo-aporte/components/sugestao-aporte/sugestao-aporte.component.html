@@ -3,11 +3,11 @@
     <mat-card-title>{{ investimento?.nome }}</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <p><b>Posição Atual:</b> R$ {{investimento?.posicaoAtual }}</p>
-    <p><b>% Ideal:</b> {{ investimento?.percentualIdeal }}%</p>
-    <p><b>% Atual:</b> {{ investimento?.percentualAtual }}</p>
-    <p class="sugestao"><b>Aporte Sugerido:</b> R$ {{ investimento?.sugestaoAporte }}</p>
-    <p class="sugestao"><b>Posição pós aporte:</b> R$ {{ investimento?.posicaoComSugestaoAporte }}</p>
-    <p class="sugestao"><b>% Após aporte:</b> {{ investimento?.percentualComSugestaoAporte }}%</p>
+    <p><b>Posição Atual:</b> {{investimento?.posicaoAtual | currency:'BRL':'symbol' }}</p>
+    <p><b>% Ideal:</b> {{ investimento?.percentualIdeal | number: '1.2-2' }}%</p>
+    <p><b>% Atual:</b> {{ investimento?.percentualAtual | number: '1.2-2' }}%</p>
+    <p class="sugestao"><b>Aporte Sugerido:</b> {{ investimento?.sugestaoAporte | currency:'BRL':'symbol'}}</p>
+    <p class="sugestao"><b>Posição pós aporte:</b> {{ investimento?.posicaoComSugestaoAporte | currency:'BRL':'symbol'}}</p>
+    <p class="sugestao"><b>% Após aporte:</b> {{ investimento?.percentualComSugestaoAporte | number: '1.2-2' }}%</p>
   </mat-card-content>
 </mat-card>

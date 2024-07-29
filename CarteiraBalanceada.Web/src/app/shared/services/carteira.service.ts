@@ -51,8 +51,6 @@ export class CarteiraService {
           this.utilitariosService.notificarAlteracaoIdCarteira(carteiraSelecionada);          
         })
       ).subscribe(resultado => {
-        console.log('subscribe ')
-        console.log(resultado)
         if (resultado) {
           carteiraSelecionada = resultado;
         } else {
