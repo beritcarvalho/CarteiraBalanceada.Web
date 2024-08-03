@@ -6,8 +6,8 @@
     <p><b>Posição Atual:</b> {{investimento?.posicaoAtual | currency:'BRL':'symbol' }}</p>
     <p><b>% Ideal:</b> {{ investimento?.percentualIdeal | number: '1.2-2' }}%</p>
     <p><b>% Atual:</b> {{ investimento?.percentualAtual | number: '1.2-2' }}%</p>
-    <p class="sugestao"><b>Aporte Sugerido:</b> {{ investimento?.sugestaoAporte | currency:'BRL':'symbol'}}</p>
-    <p class="sugestao"><b>Posição pós aporte:</b> {{ investimento?.posicaoComSugestaoAporte | currency:'BRL':'symbol'}}</p>
-    <p class="sugestao"><b>% Após aporte:</b> {{ investimento?.percentualComSugestaoAporte | number: '1.2-2' }}%</p>
+    <p [ngClass]="classSugestao()"><b>Aporte Sugerido:</b> {{ investimento?.sugestaoAporte | currency:'BRL':'symbol'}}</p>
+    <p [ngClass]="classSugestao()"><b>Posição pós aporte:</b> {{ investimento?.posicaoComSugestaoAporte | currency:'BRL':'symbol'}}</p>
+    <p [ngClass]="classSugestao()"><b>% Após aporte:</b> {{ investimento?.percentualComSugestaoAporte | number: '1.2-2' }}%</p>
   </mat-card-content>
 </mat-card>

@@ -66,4 +66,11 @@ export class CalculoAporteComponent implements OnInit {
       ])]
     });
   }
+
+  public classValorCarteiraPosAporte(): string {
+    if(this.carteira?.valorCarteira != this.carteira?.valorComAporte)
+      return 'valor-carteira-pos-aporte'
+    
+    return 'hidden-valor-carteira-pos-aporte'
+  }
 }

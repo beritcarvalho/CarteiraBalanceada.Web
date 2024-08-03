@@ -33,4 +33,13 @@
     align-items: center;
     margin-top: 8px;
   }
+
+}
+
+.hidden-valor-carteira-pos-aporte{
+  display: none;
+}
+
+.valor-carteira-pos-aporte{
+  color: var(--color-text-aporte-realizado);
 }
