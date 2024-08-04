@@ -34,8 +34,12 @@ export class RealizarAporteComponent implements OnInit {
 
   public aportar(): void {
     if (this.aporteFormControl.valid && this.aporteFormControl?.value) {
-      const aporte: number = Number(this.aporteFormControl.value.replace(',', '.'));
-      const id: string = this.investimento?.id;
+      const aporte: number = Number(this.aporteFormControl.value.replace(',', '.'));      
+      let id!: string;
+      
+      if(this.investimento?.id)
+        id = this.investimento.id
+
       if (this.investimento?.id) {
         this.utilitariosService.setLoading(true);
         this.carteiraSevice.aportarInvestimento(id, aporte).pipe(

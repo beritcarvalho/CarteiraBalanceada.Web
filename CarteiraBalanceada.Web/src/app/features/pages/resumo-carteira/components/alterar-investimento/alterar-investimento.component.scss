@@ -1,0 +1,26 @@
+.conteudo {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+
+    .container-input-full{
+        margin-bottom: auto;
+    }
+    
+     .full-width {            
+       width: 100%; 
+     }
+
+     .half-width {
+        display: flex;       
+        width: 100%;
+        justify-content: space-between;
+
+        .half-item{            
+            width: 47.5%;
+        }
+      }
+  }
+  

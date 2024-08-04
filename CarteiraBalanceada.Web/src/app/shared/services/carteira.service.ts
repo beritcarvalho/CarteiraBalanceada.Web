@@ -44,6 +44,10 @@ export class CarteiraService {
     return this.service.http.post<Investimento>(`${this.urlApi}/investimentos/aportar`, parametro);
   }
 
+  public alterarInvestimento(investimento: Investimento): Observable<Investimento> { 
+    return this.service.http.put<Investimento>(`${this.urlApi}/investimentos`, investimento);
+  }
+
 
   public distribuirAporte(id: string, aporte: number): void {
     let carteiraSelecionada: Carteira | null = null;

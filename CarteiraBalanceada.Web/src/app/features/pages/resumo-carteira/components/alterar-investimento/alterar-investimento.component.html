@@ -1,0 +1,56 @@
+<h2 mat-dialog-title>O que você deseja alterar em {{ investimento?.nome }}?</h2>
+<mat-dialog-content class="conteudo">
+  <form [formGroup]="formulario">
+
+    <div class="container-input-full">
+      <mat-form-field class="full-width">
+        <mat-label>Nome</mat-label>
+        <input matInput formControlName="nome">
+        <mat-error *ngIf="formulario.get('nome')?.errors?.['required'] || formulario.get('nome')?.errors?.['pattern']">
+          Por favor, preencha o campo Nome.
+        </mat-error>
+        <mat-error *ngIf="formulario.get('nome')?.errors?.['maxlength']">
+          O nome deve conter no máximo 30 caracteres.
+        </mat-error>
+        <mat-error *ngIf="formulario.get('nome')?.errors?.['minlength']">
+          O nome deve conter no mínimo 1 caracter
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="half-width">
+      <mat-form-field class="half-item">
+        <mat-label>Posição Atual</mat-label>
+        <input matInput formControlName="posicaoAtual">
+        <mat-error *ngIf="formulario.get('posicaoAtual')?.errors?.['required']">
+          Posição atual do investimento é obrigatório.
+        </mat-error>
+        <mat-error *ngIf="formulario.get('posicaoAtual')?.errors?.['pattern']">
+          O valor fornecido é inválido!
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="half-item">
+        <mat-label>Percentual Ideal</mat-label>
+        <input matInput formControlName="percentualIdeal">
+        <mat-error *ngIf="formulario.get('percentualIdeal')?.errors?.['required']">
+          Por favor, preencha a porcentagem Ideal.
+        </mat-error>
+        <mat-error *ngIf="formulario.get('percentualIdeal')?.errors?.['pattern']">
+          Porcentacem inválida.
+        </mat-error>
+        <mat-error *ngIf="formulario.get('percentualIdeal')?.errors?.['maxlength']">
+          O nome deve conter no máximo 30 caracteres.
+        </mat-error>
+        <mat-error *ngIf="formulario.get('percentualIdeal')?.errors?.['minlength']">
+          O nome deve conter no mínimo 1 caracter
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancelar</button>
+  <button mat-button cdkFocusInitial (click)="alterarInvestimento()">Alterar</button>
+</mat-dialog-actions>
