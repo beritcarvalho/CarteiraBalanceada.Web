@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Quanto você deseja aportar em {{ investimento?.nome }}?</h2>
+<mat-dialog-content>
+  <form class="formulario">
+    <mat-form-field class="input-full-width">
+      <mat-label>Aporte</mat-label>
+      <input type="text" matInput [formControl]="aporteFormControl" [errorStateMatcher]="matcher" placeholder="Ex. 1234,45">      
+      @if (aporteFormControl.hasError('pattern') && !aporteFormControl.hasError('required')) {
+        <mat-error>Valor inválido.</mat-error>
+      }
+      @if (aporteFormControl.hasError('required')) {
+        <mat-error>Valor válido para aportar é requerido</mat-error>
+      }
+    </mat-form-field>
+  </form>  
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancelar</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Aportar</button>
+</mat-dialog-actions>

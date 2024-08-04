@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { toolbarComponent } from './components/toolbar/toolbar.component';
 import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -37,7 +38,8 @@ import { ProgressBarComponent } from './components/progress-bar/progress-bar.com
     MatProgressBarModule,
     MatInputModule,
     MatFormFieldModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
   ],
   exports: [
     MatExpansionModule,
@@ -50,7 +52,8 @@ import { ProgressBarComponent } from './components/progress-bar/progress-bar.com
     MatInputModule,
     MatFormFieldModule,
     FormsModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule ,
+    MatDialogModule
   ]
 })
 export class SharedModule { }

@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { UtilitariosService } from '../../../shared/services/utilitarios.service';
 import { Carteira } from '../../../shared/interfaces/carteira';
 import { Investimento } from '../../../shared/interfaces/investimento';
-import { catchError, empty, finalize } from 'rxjs';
 
 @Component({
   selector: 'app-resumo-carteira',
@@ -16,7 +15,7 @@ export class ResumoCarteiraComponent {
 
   public carteira: Carteira | null = null;
   public investimentos!: Investimento[];
-  public mostrar = false;
+  public mostrar = false;  
 
   ngOnInit(): void {
     this.observarCarteiraSelecionada();

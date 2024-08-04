@@ -5,6 +5,8 @@ import { InvestimentoComponent } from './pages/resumo-carteira/components/invest
 import { SharedModule } from '../shared/shared.module';
 import { CalculoAporteComponent } from './pages/calculo-aporte/calculo-aporte.component';
 import { SugestaoAporteComponent } from './pages/calculo-aporte/components/sugestao-aporte/sugestao-aporte.component';
+import { RealizarAporteComponent } from './pages/resumo-carteira/components/realizar-aporte/realizar-aporte.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -14,10 +16,11 @@ import { SugestaoAporteComponent } from './pages/calculo-aporte/components/suges
     InvestimentoComponent,
     CalculoAporteComponent,
     SugestaoAporteComponent,
+    RealizarAporteComponent
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule   
   ],
   exports: [
     ResumoCarteiraComponent,
