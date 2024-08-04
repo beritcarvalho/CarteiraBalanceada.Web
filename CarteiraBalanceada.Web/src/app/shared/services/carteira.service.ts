@@ -6,6 +6,7 @@ import { catchError, empty, finalize, Observable } from 'rxjs';
 import { Carteira } from '../../shared/interfaces/carteira';
 import { Aporte } from '../../shared/interfaces/aporte-input';
 import { UtilitariosService } from './utilitarios.service';
+import { Investimento } from '../interfaces/investimento';
 
 export interface Teste {
   nomeCarteira: string;
@@ -34,10 +35,19 @@ export class CarteiraService {
     return this.service.http.post<Carteira>(`${this.urlApi}/calcular-aporte-distribuido`, parametro);
   }
 
+  public aportarInvestimento(idInvestimento: string, aporte: number): Observable<Investimento> {
+    const parametro: Aporte = {
+      id: idInvestimento,
+      aporte: aporte
+    }
+
+    return this.service.http.post<Investimento>(`${this.urlApi}/investimentos/aportar`, parametro);
+  }
+
+
   public distribuirAporte(id: string, aporte: number): void {
     let carteiraSelecionada: Carteira | null = null;
 
-    
     if (id) {      
       this.utilitariosService.setLoading(true);
       this.calcularDistribuicaoAporte(id, aporte).pipe(
