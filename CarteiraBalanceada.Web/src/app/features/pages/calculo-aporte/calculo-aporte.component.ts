@@ -54,7 +54,7 @@ export class CalculoAporteComponent implements OnInit {
       const aporte = Number(input);
 
       if(this.carteira?.id)
-        this.carteiraService.distribuirAporte(this.carteira.id, aporte)
+        this.carteiraService.recarregarDadosCarteira(this.carteira.id, aporte)
     }
   }
 

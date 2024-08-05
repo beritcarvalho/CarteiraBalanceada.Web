@@ -69,6 +69,6 @@ export class toolbarComponent implements OnInit {
 
   setIdCarteira(evento: MatSelectChange) {
     let id = evento?.source?.value;
-    this.carteiraService.distribuirAporte(id,0);
+    this.carteiraService.recarregarDadosCarteira(id,0);
   }
 }

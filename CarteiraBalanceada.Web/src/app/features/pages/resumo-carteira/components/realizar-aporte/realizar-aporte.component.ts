@@ -22,7 +22,7 @@ export class RealizarAporteComponent implements OnInit {
   constructor(private dialogRef: MatDialogRef<RealizarAporteComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private utilitariosService: UtilitariosService,
-    private carteiraSevice: CarteiraService
+    private carteiraService: CarteiraService
   ) {
     this.investimento = data.investimento;
   }
@@ -42,7 +42,7 @@ export class RealizarAporteComponent implements OnInit {
 
       if (this.investimento?.id) {
         this.utilitariosService.setLoading(true);
-        this.carteiraSevice.aportarInvestimento(id, aporte).pipe(
+        this.carteiraService.aportarInvestimento(id, aporte).pipe(
           catchError(error => {
             this.utilitariosService.mostrarNotificacaoErro(error?.message)
             return empty();
@@ -54,7 +54,7 @@ export class RealizarAporteComponent implements OnInit {
         ).subscribe(() => {
           this.utilitariosService.mostrarNotificacaoSucesso("Aporte realizado com Sucesso!");
           if (this.idCarteira) {
-            this.carteiraSevice.distribuirAporte(this.idCarteira, 0);
+            this.carteiraService.recarregarDadosCarteira(this.idCarteira, 0);
           }
         });
       }

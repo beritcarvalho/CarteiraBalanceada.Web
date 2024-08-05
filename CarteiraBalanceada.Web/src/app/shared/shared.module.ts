@@ -17,13 +17,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { toolbarComponent } from './components/toolbar/toolbar.component';
 import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { DialogGenericComponent } from './components/dialog-generic/dialog-generic.component';
 
 
 
 @NgModule({
   declarations: [
     toolbarComponent,
-    ProgressBarComponent
+    ProgressBarComponent,
+    DialogGenericComponent
   ],
   imports: [
     CommonModule,

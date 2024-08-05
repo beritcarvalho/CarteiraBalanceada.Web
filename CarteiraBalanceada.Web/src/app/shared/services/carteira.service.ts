@@ -48,8 +48,12 @@ export class CarteiraService {
     return this.service.http.put<Investimento>(`${this.urlApi}/investimentos`, investimento);
   }
 
+  public desativarInvestimento(id: string) {
+    return this.service.http.put<Investimento>(`${this.urlApi}/investimentos/desativar/${id}`, {});
+  }
 
-  public distribuirAporte(id: string, aporte: number): void {
+
+  public recarregarDadosCarteira(id: string, aporte: number): void {
     let carteiraSelecionada: Carteira | null = null;
 
     if (id) {      

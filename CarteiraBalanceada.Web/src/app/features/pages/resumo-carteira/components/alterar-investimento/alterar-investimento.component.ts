@@ -22,7 +22,7 @@ export class AlterarInvestimentoComponent {
   constructor(private dialogRef: MatDialogRef<RealizarAporteComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private utilitariosService: UtilitariosService,
-    private carteiraSevice: CarteiraService,
+    private carteiraService: CarteiraService,
     private formBuilder: FormBuilder
   ) {
     this.investimento = data.investimento;
@@ -58,7 +58,7 @@ export class AlterarInvestimentoComponent {
       
       if (investimentoAtualizado?.id) {
         this.utilitariosService.setLoading(true);
-        this.carteiraSevice.alterarInvestimento(investimentoAtualizado).pipe(
+        this.carteiraService.alterarInvestimento(investimentoAtualizado).pipe(
           catchError(error => {
             this.utilitariosService.mostrarNotificacaoErro(error?.message)
             return empty();
@@ -70,7 +70,7 @@ export class AlterarInvestimentoComponent {
         ).subscribe(() => {
           this.utilitariosService.mostrarNotificacaoSucesso("Atualização realizado com Sucesso!");
           if (this.idCarteira) {
-            this.carteiraSevice.distribuirAporte(this.idCarteira, 0);
+            this.carteiraService.recarregarDadosCarteira(this.idCarteira, 0);
           }
         });
       }
